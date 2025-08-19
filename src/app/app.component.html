@@ -6,16 +6,16 @@
     <div class="container-fluid">
       <ul class="navbar-nav d-flex flex-row">
         <li class="nav-item p-2">
-          <a routerLink="home" class="nav-link btn btn-primary me-3 p-2">Home</a>
+          <a  class="nav-link btn btn-primary me-3 p-2" routerLink="">Home</a>
         </li>
         <li class="nav-item p-2">
-          <a routerLink="about" class="nav-link btn btn-primary me-3 p-2">aboutus </a>
+          <a class="nav-link btn btn-primary me-3 p-2" [routerLink]="['about']" >aboutus </a>
         </li>
         <li class="nav-item p-2">
-          <a  class="nav-link btn btn-primary me-3 p-2">Customer orders</a>
+          <a  class="nav-link btn btn-primary me-3 p-2" routerLink="orders">Customer orders</a>
         </li>
         <li class="nav-item p-2">
-          <a class="nav-link btn btn-primary me-3 p-2">Order details </a>
+          <a class="nav-link btn btn-primary me-3 p-2" routerLink="orders-details">Order details </a>
         </li>
         <li class="nav-item p-2">
           <a class="nav-link btn btn-primary me-3 p-2">Instructions</a>
