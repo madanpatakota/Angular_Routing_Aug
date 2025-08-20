@@ -1,12 +1,26 @@
-<div class="row">
-    <div class="col-md-8">
-      <h1>Order details</h1>
-      <p>
-        Welcome to the Order details page. Seems that you are not selected any
-        value from orders page . So Please select atleast one order . below is
-        the Page
-        <a class="" [routerLink]="['../orders']">Customer Orders</a> . So that
-        you can view the orders
-      </p>
-    </div>
+<div class="row" *ngIf="ordersData.length ==0">
+  <div class="col-md-8">
+    <h1>Order details</h1>
+    <p>
+      Welcome to the Order details page. Seems that you are not selected any
+      value from orders page . So Please select atleast one order . below is the
+      Page
+      <a class="" [routerLink]="['../orders']">Customer Orders</a> . So that you
+      can view the orders
+    </p>
   </div>
+</div>
+
+<ul style="list-style: none;">
+  <li *ngFor="let item of ordersData">
+    <p>Id:{{ item.Id }}</p>
+    <p>ContactNo : {{ item.ContactNo }}</p>
+    <p>DeleveryDate : {{ item.DeleveryDate }}</p>
+    <p>FeebackFromCustomers : {{ item.FeebackFromCustomers }}</p>
+    <p>Location:{{ item.Location }}</p>
+    <p>OrderName:{{ item.OrderName }}</p>
+    <p>OrderPrice:{{ item.OrderPrice }}</p>
+    <p>Service:{{ item.Service }}</p>
+    
+  </li>
+</ul>
