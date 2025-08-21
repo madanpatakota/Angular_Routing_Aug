@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { OrdersComponent } from './orders/orders.component';
 import { OrdersdetailsComponent } from './ordersdetails/ordersdetails.component';
+import { canActivateGuardGuard } from './can-activate-guard.guard';
 
 const routes: Routes = [
   {
@@ -24,11 +25,13 @@ const routes: Routes = [
    {
     path: 'orders-details',
     component: OrdersdetailsComponent,
+
   },
    {
     path: 'orders-details/:orderID',
     component: OrdersdetailsComponent,
-  },
+    canActivate: [canActivateGuardGuard]
+   },
 ];
 
 @NgModule({

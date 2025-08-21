@@ -16,7 +16,29 @@
             </thead>
             <tbody>
                 <tr *ngFor="let item of OrdersList">
-                       <td><a [routerLink]="['../orders-details', item.Id]">{{item.Id}}</a></td>
+                       
+                    <!--Passing as paramter-->
+                    <!-- <td><a [routerLink]="['../orders-details', item.Id]">{{item.Id}}</a></td> -->
+
+                    <!--Passing as querystring-->
+                    <!-- <td><a [routerLink]="['../orders-details']" 
+                           [queryParams]="{'Id':item.Id}">{{item.Id}}</a></td> -->
+
+
+                    <!--Passing as Fragment-->
+                    <!-- [fragment]="item.Id" -->
+                    <!-- <td><a 
+                        [routerLink]="['../orders-details']" 
+                        fragment="{{item.Id}}">
+                        {{item.Id}}</a></td> -->
+                      
+                      
+                    <td><a class="link-primary" style="cursor: pointer;" 
+                    (click)="navOrdersDetailsPage(item.Id)">{{item.Id}}</a></td>
+                       
+                       
+                       
+                       
                        <td>{{item.OrderName}}</td>
                        <td>{{item.OrderPrice}}</td>
                 </tr>

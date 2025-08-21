@@ -23,9 +23,26 @@ export class OrdersdetailsComponent implements OnInit {
            let orders = this.orderDetailsService.getOrders();  // 2 records
            let paramterID = +parameterData.orderID
            this.ordersData = orders.filter((record)=>{ return record.Id == paramterID});
-
-
      })
+
+    //  this.activateRoute.queryParams.subscribe((parameterData:any)=>{
+    //        console.log(parameterData);  // {Id:1}
+
+    //        let orders = this.orderDetailsService.getOrders();  // 2 records
+    //        let paramterID = +parameterData.Id
+    //        this.ordersData = orders.filter((record)=>{ return record.Id == paramterID});
+    //  })
+
+
+    //   this.activateRoute.fragment.subscribe((parameterData:any)=>{
+    //        console.log(parameterData);  // 1
+
+    //        let orders = this.orderDetailsService.getOrders();  // 2 records
+    //        let paramterID = +parameterData; //"1" --> 1
+    //        this.ordersData = orders.filter((record)=>{ return record.Id == paramterID});
+    //  })
+
+
   }
 
 }
