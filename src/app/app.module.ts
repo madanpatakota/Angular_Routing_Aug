@@ -8,6 +8,9 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { OrdersComponent } from './orders/orders.component';
 import { OrdersdetailsComponent } from './ordersdetails/ordersdetails.component';
 import { canActivateGuardGuard } from './can-activate-guard.guard';
+import { LoginComponent } from './login/login.component';
+import { canDecativateGuard } from './can-decativate.guard';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 const routes: Routes = [
   {
@@ -30,12 +33,21 @@ const routes: Routes = [
    {
     path: 'orders-details/:orderID',
     component: OrdersdetailsComponent,
-    canActivate: [canActivateGuardGuard]
+    canActivate: [canActivateGuardGuard],
+    canDeactivate : [canDecativateGuard]
    },
+   {
+    path: 'login',
+    component: LoginComponent,
+   },
+   {
+    path: '**',
+    component: NotfoundComponent,
+   }
 ];
 
 @NgModule({
-  declarations: [AppComponent , HomeComponent , OrdersComponent , OrdersdetailsComponent],
+  declarations: [AppComponent , HomeComponent , OrdersComponent , OrdersdetailsComponent, LoginComponent, NotfoundComponent],
   imports: [BrowserModule , RouterModule.forRoot(routes)],
   providers: [],
   bootstrap: [AppComponent],
