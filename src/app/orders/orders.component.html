@@ -46,3 +46,20 @@
         </table>
     </div>
 </div>
+
+<!-- 
+<div>
+    <button routerLink="/orders/moreinfo" class="btn btn-secondary">Overview</button> |
+    <button routerLink="/orders/benefits" class="btn btn-danger">Benifts</button> |
+</div> -->
+
+
+<div>
+    <button (click)="ordersNavigation('Overview')" class="btn btn-secondary">Overview</button> |
+    <button (click)="ordersNavigation('Benifits')" class="btn btn-danger">Benifts</button> |
+</div>
+
+
+
+<!-- what ever the component let it be this routeroutlet render your component -->
+<router-outlet></router-outlet>
